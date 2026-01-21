@@ -2,25 +2,143 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #333333;
+  
+  /* Primary Colors */
+  --dark-forest-green: #012604;
+  --ocean-green: #125A1A;
+  --deep-ocean-blue: #003273;
+  --coastal-blue: #5AABD9;
+  --midnight-navy: #00003E;
+  
+  /* Secondary Colors */
+  --warm-gray: #6B6B6B;
+  --light-gray: #F5F5F5;
+  
+  /* Accent Colors */
+  --success-green: #2ECC71;
+  --alert-orange: #E67E22;
+  --data-blue: #3498DB;
+
+  /* UI Variables mapping */
+  --primary: var(--dark-forest-green);
+  --secondary: var(--ocean-green);
+  --accent: var(--deep-ocean-blue);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --color-dark-forest-green: var(--dark-forest-green);
+  --color-ocean-green: var(--ocean-green);
+  --color-deep-ocean-blue: var(--deep-ocean-blue);
+  --color-coastal-blue: var(--coastal-blue);
+  --color-midnight-navy: var(--midnight-navy);
+  
+  --color-warm-gray: var(--warm-gray);
+  --color-light-gray: var(--light-gray);
+  
+  --color-success-green: var(--success-green);
+  --color-alert-orange: var(--alert-orange);
+  --color-data-blue: var(--data-blue);
+
+  --font-sans: "Flatory Sans SemiCondensed", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "TeX Gyre Adventor", Arial, Helvetica, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--midnight-navy);
+    --foreground: #ffffff;
+    --light-gray: rgba(255, 255, 255, 0.05);
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.text-heading {
+  font-family: var(--font-heading);
+}
+
+.bg-ocean-gradient {
+  background: linear-gradient(180deg, var(--midnight-navy) 0%, var(--deep-ocean-blue) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--ocean-green), var(--coastal-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button Base Styles */
+.btn-primary {
+  background-color: var(--ocean-green);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+.btn-primary:hover {
+  background-color: #0D4013;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--deep-ocean-blue);
+  color: var(--deep-ocean-blue);
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  background-color: var(--deep-ocean-blue);
+  color: white;
+}
+
+.btn-cta {
+  background-color: var(--deep-ocean-blue);
+  color: white;
+  padding: 14px 36px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.btn-cta:hover {
+  background-color: #002050;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card {
+  background-color: var(--background);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.all-caps {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
