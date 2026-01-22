@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { 
-  ArrowRight, 
-  Droplets, 
-  Fish, 
-  Leaf, 
-  BarChart3, 
-  ShieldCheck, 
-  Globe, 
-  Mail, 
-  Phone, 
-  Linkedin, 
-  Twitter, 
+import {
+  ArrowRight,
+  Droplets,
+  Fish,
+  Leaf,
+  BarChart3,
+  ShieldCheck,
+  Globe,
+  Mail,
+  Phone,
+  Linkedin,
+  Twitter,
   Instagram,
   CheckCircle2,
   AlertCircle,
@@ -31,27 +31,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-light-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <div className="flex items-center gap-2">
-              <Waves className="h-8 w-8 text-ocean-green" />
-              <div className="flex flex-col leading-none">
-                <span className="text-2xl font-bold tracking-tight text-dark-forest-green dark:text-white">AQUA GRID</span>
-                <span className="text-[10px] font-bold text-ocean-green all-caps">Green Solutions for Blue Oceans</span>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center gap-8 text-sm font-bold all-caps">
-              <a href="#" className="hover:text-ocean-green transition-colors">Home</a>
-              <a href="#about" className="hover:text-ocean-green transition-colors">About</a>
-              <a href="#solution" className="hover:text-ocean-green transition-colors">Solutions</a>
-              <a href="#impact" className="hover:text-ocean-green transition-colors">Impact</a>
-              <a href="#resources" className="hover:text-ocean-green transition-colors">Resources</a>
-              <a href="#contact" className="btn-primary py-2 px-6 text-xs">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Navigation */}
+
 
       <main className="flex-grow">
         {/* Hero Section */}
@@ -62,7 +43,7 @@ export default function Home() {
                 Turning the Tide on Ocean Acidification
               </h1>
               <p className="text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed">
-                Scalable kelp farming solutions that restore marine ecosystems while creating sustainable revenue for coastal communities.
+                Scalable kelp poop solutions that restore marine ecosystems while creating sustainable revenue for coastal communities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="#solution" className="btn-cta flex items-center justify-center gap-2 transform hover:scale-105">
@@ -402,7 +383,7 @@ export default function Home() {
                 }
               ].map((item, i) => (
                 <div key={i} className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-                  <button 
+                  <button
                     className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-light-gray dark:hover:bg-white/5 transition-colors"
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   >
@@ -430,9 +411,9 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="#contact" className="btn-cta text-lg px-10">Get Involved Now</a>
               <div className="flex bg-white/10 backdrop-blur-md rounded-lg p-1 border border-white/20">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
+                <input
+                  type="email"
+                  placeholder="Enter your email"
                   className="bg-transparent border-none focus:ring-0 px-4 py-2 w-64 placeholder:text-white/50 text-white"
                 />
                 <button className="bg-white text-dark-forest-green px-6 py-2 rounded-md font-bold hover:bg-ocean-green hover:text-white transition-all">
@@ -459,7 +440,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Restoring ocean health through innovative, scalable kelp farming technology. 
+                Restoring ocean health through innovative, scalable kelp farming technology.
                 Creating ripples of change for a sustainable future.
               </p>
               <div className="flex gap-4">
@@ -474,7 +455,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-bold text-lg mb-6 all-caps tracking-wider text-coastal-blue">Quick Links</h4>
               <ul className="space-y-4 text-sm text-slate-400">
@@ -516,7 +497,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          
+
           <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-bold all-caps tracking-widest">
             <div>© 2025 Aquagrid. All rights reserved.</div>
             <div className="flex gap-8">
