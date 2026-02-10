@@ -1,78 +1,137 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #333333;
-  
-  /* Primary Colors */
-  --dark-forest-green: #012604;
-  --ocean-green: #125A1A;
-  --deep-ocean-blue: #003273;
-  --coastal-blue: #5AABD9;
-  --midnight-navy: #00003E;
-  
+  /* New Palette */
+  --frosted-mint: #E5F9E0;
+  --light-green: #A3F7B5;
+  --mint-leaf: #40C9A2;
+  --verdigris: #2F9C95;
+  --chocolate-plum: #664147;
+
+  /* Background & Foreground Mappings */
+  --background: var(--frosted-mint);
+  --foreground: var(--chocolate-plum);
+
+  /* Retaining semantic variable names for compatibility but mapping to new palette */
+  --dark-forest-green: var(--chocolate-plum);
+  /* Main Dark Text/Element */
+  --ocean-green: var(--mint-leaf);
+  /* Primary Brand Color */
+  --deep-ocean-blue: var(--chocolate-plum);
+  /* Darkest Primary */
+  --coastal-blue: var(--verdigris);
+  /* Secondary Accent */
+  --midnight-navy: var(--chocolate-plum);
+  /* Almost black counterpart */
+
   /* Secondary Colors */
-  --warm-gray: #6B6B6B;
-  --light-gray: #F5F5F5;
-  
+  --warm-gray: #7d5e65;
+  /* Muted version of Chocolate Plum */
+  --light-gray: #ffffff;
+  /* White for cards against the mint background */
+
   /* Accent Colors */
-  --success-green: #2ECC71;
-  --alert-orange: #E67E22;
-  --data-blue: #3498DB;
+  --success-green: var(--mint-leaf);
+  --alert-orange: #fb923c;
+  --data-blue: var(--verdigris);
 
   /* UI Variables mapping */
-  --primary: var(--dark-forest-green);
-  --secondary: var(--ocean-green);
-  --accent: var(--deep-ocean-blue);
+  --primary: var(--ocean-green);
+  --secondary: var(--coastal-blue);
+  --accent: var(--light-green);
+  /* Highlights */
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  /* 8px */
+  --radius-md: 1rem;
+  /* 16px */
+  --radius-lg: 1.5rem;
+  /* 24px */
+  --radius-full: 9999px;
+  /* full rounded */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --color-dark-forest-green: var(--dark-forest-green);
   --color-ocean-green: var(--ocean-green);
   --color-deep-ocean-blue: var(--deep-ocean-blue);
   --color-coastal-blue: var(--coastal-blue);
   --color-midnight-navy: var(--midnight-navy);
-  
+
   --color-warm-gray: var(--warm-gray);
   --color-light-gray: var(--light-gray);
-  
+
+  --color-frosted-mint: var(--frosted-mint);
+  --color-light-green: var(--light-green);
+  --color-mint-leaf: var(--mint-leaf);
+  --color-verdigris: var(--verdigris);
+  --color-chocolate-plum: var(--chocolate-plum);
+
   --color-success-green: var(--success-green);
   --color-alert-orange: var(--alert-orange);
   --color-data-blue: var(--data-blue);
 
-  --font-sans: "Flatory Sans SemiCondensed", "Helvetica Neue", Arial, sans-serif;
-  --font-heading: "TeX Gyre Adventor", Arial, Helvetica, sans-serif;
+  /* Typography - Using Geist Sans / Modern Clean Sans */
+  --font-sans: var(--font-geist-sans), "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-geist-sans), "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius-card: var(--radius-lg);
+  --radius-button: var(--radius-full);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--midnight-navy);
-    --foreground: #ffffff;
+    /* Optional: Tweaks for dark mode if user wants it, but for now assuming the palette is primary.
+       Often these specific palettes are "light mode" focused. 
+       I will inverse slightly for dark mode, or keep it light if it's a specific brand vibe.
+       Given the request for "these colors", I'll stick close to them.
+       Let's make dark mode a deep version of the Plum. */
+    --background: #1a0f12;
+    /* Very dark plum */
+    --foreground: #F5E6E8;
+    /* Very light plum/white */
     --light-gray: rgba(255, 255, 255, 0.05);
+    --warm-gray: #d4b8be;
+
+    --dark-forest-green: #E5F9E0;
+    /* Light text for headings */
   }
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  line-height: 1.6;
+  line-height: 1.7;
+  /* Increased line-height for readability */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: 600;
+  /* Slightly lighter weight than 700 for elegance */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  /* Tight tracking for modern feel */
 }
 
+/* Utilities */
 .text-heading {
   font-family: var(--font-heading);
 }
@@ -82,63 +141,106 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, var(--ocean-green), var(--coastal-blue));
+  background: linear-gradient(135deg, var(--ocean-green), var(--coastal-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Button Base Styles */
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.dark .glass {
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Button Base Styles - Minimalist & Soft */
 .btn-primary {
   background-color: var(--ocean-green);
   color: white;
   padding: 12px 32px;
-  border-radius: 4px;
+  border-radius: var(--radius-button);
   font-family: var(--font-heading);
-  font-weight: 700;
-  transition: background-color 0.2s;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
 }
+
 .btn-primary:hover {
-  background-color: #0D4013;
+  background-color: #059669;
+  /* Emerald 600 */
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
 }
 
 .btn-secondary {
   background-color: transparent;
-  border: 2px solid var(--deep-ocean-blue);
-  color: var(--deep-ocean-blue);
-  padding: 10px 30px;
-  border-radius: 4px;
+  border: 1px solid var(--foreground);
+  /* Thinner border */
+  color: var(--foreground);
+  padding: 11px 31px;
+  /* visual alignment with primary */
+  border-radius: var(--radius-button);
   font-family: var(--font-heading);
-  font-weight: 700;
-  transition: all 0.2s;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
+
 .btn-secondary:hover {
-  background-color: var(--deep-ocean-blue);
-  color: white;
+  background-color: var(--foreground);
+  color: var(--background);
+  transform: translateY(-1px);
 }
 
 .btn-cta {
-  background-color: var(--deep-ocean-blue);
+  background: linear-gradient(135deg, var(--deep-ocean-blue), #1e293b);
   color: white;
-  padding: 14px 36px;
-  border-radius: 6px;
+  padding: 16px 48px;
+  border-radius: var(--radius-button);
   font-family: var(--font-heading);
-  font-weight: 700;
-  transition: all 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.btn-cta:hover {
-  background-color: #002050;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
 }
 
+.btn-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.3);
+}
+
+/* Card Styles - Soft & Minimal */
 .card {
-  background-color: var(--background);
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  border-radius: var(--radius-card);
+  padding: 32px;
+  border: 1px solid var(--light-gray);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  /* very subtle shadow */
+  transition: all 0.3s ease;
+}
+
+.dark .card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.05);
 }
 
 .all-caps {
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  /* Increased tracking */
   text-transform: uppercase;
+  font-size: 0.85em;
+  /* Slightly smaller */
+  font-weight: 600;
 }
