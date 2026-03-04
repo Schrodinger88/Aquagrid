@@ -1,104 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  /* New Palette */
-  --frosted-mint: #E5F9E0;
-  --light-green: #A3F7B5;
-  --mint-leaf: #40C9A2;
-  --verdigris: #2F9C95;
-  --chocolate-plum: #664147;
+  /* Brand Palette - User Defined (Updated) */
+  --seafoam-teal: #5caad7;
+  /* Primary Highlight (Light Blue) */
+  --mist-blue: #002f73;
+  /* Secondary (Dark Blue) */
+  --glacial-green: #125a1a;
+  /* Nature/Green */
+  --sunlight-cream: #e6f4fa;
+  /* Light Blue/White (Pale Sky) */
 
-  /* Background & Foreground Mappings */
-  --background: var(--frosted-mint);
-  --foreground: var(--chocolate-plum);
+  --young-kelp: #125a1a;
+  /* Accent (Green) */
 
-  /* Retaining semantic variable names for compatibility but mapping to new palette */
-  --dark-forest-green: var(--chocolate-plum);
-  /* Main Dark Text/Element */
-  --ocean-green: var(--mint-leaf);
-  /* Primary Brand Color */
-  --deep-ocean-blue: var(--chocolate-plum);
-  /* Darkest Primary */
-  --coastal-blue: var(--verdigris);
-  /* Secondary Accent */
-  --midnight-navy: var(--chocolate-plum);
-  /* Almost black counterpart */
+  --deep-kelp: #012604;
+  /* Headings (Very Dark Green) */
+  --driftwood: #00013c;
+  /* Body Text (Very Dark Blue) */
 
-  /* Secondary Colors */
-  --warm-gray: #7d5e65;
-  /* Muted version of Chocolate Plum */
-  --light-gray: #ffffff;
-  /* White for cards against the mint background */
+  --sandstone: #f0f8ff;
+  /* Background (AliceBlue tint) */
+  --white: #FFFFFF;
 
-  /* Accent Colors */
-  --success-green: var(--mint-leaf);
-  --alert-orange: #fb923c;
-  --data-blue: var(--verdigris);
+  /* Mappings */
+  --background: var(--sandstone);
+  --foreground: var(--driftwood);
 
-  /* UI Variables mapping */
-  --primary: var(--ocean-green);
-  --secondary: var(--coastal-blue);
-  --accent: var(--light-green);
-  /* Highlights */
+  --primary: var(--seafoam-teal);
+  --secondary: var(--mist-blue);
+  --accent: var(--young-kelp);
 
-  /* Border Radius */
-  --radius-sm: 0.5rem;
-  /* 8px */
-  --radius-md: 1rem;
-  /* 16px */
-  --radius-lg: 1.5rem;
-  /* 24px */
+  /* Border Radius - Soft & Organic */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
   --radius-full: 9999px;
-  /* full rounded */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-dark-forest-green: var(--dark-forest-green);
-  --color-ocean-green: var(--ocean-green);
-  --color-deep-ocean-blue: var(--deep-ocean-blue);
-  --color-coastal-blue: var(--coastal-blue);
-  --color-midnight-navy: var(--midnight-navy);
+  --color-seafoam-teal: var(--seafoam-teal);
+  --color-mist-blue: var(--mist-blue);
+  --color-glacial-green: var(--glacial-green);
+  --color-sunlight-cream: var(--sunlight-cream);
+  --color-young-kelp: var(--young-kelp);
+  --color-deep-kelp: var(--deep-kelp);
+  --color-driftwood: var(--driftwood);
+  --color-sandstone: var(--sandstone);
 
-  --color-warm-gray: var(--warm-gray);
-  --color-light-gray: var(--light-gray);
+  /* Typography - Nature Oriented */
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Nunito", "Segoe UI", sans-serif;
 
-  --color-frosted-mint: var(--frosted-mint);
-  --color-light-green: var(--light-green);
-  --color-mint-leaf: var(--mint-leaf);
-  --color-verdigris: var(--verdigris);
-  --color-chocolate-plum: var(--chocolate-plum);
+  --font-heading: var(--font-serif);
+  --font-body: var(--font-sans);
 
-  --color-success-green: var(--success-green);
-  --color-alert-orange: var(--alert-orange);
-  --color-data-blue: var(--data-blue);
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-sway: sway 5s ease-in-out infinite alternate;
 
-  /* Typography - Using Geist Sans / Modern Clean Sans */
-  --font-sans: var(--font-geist-sans), "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-heading: var(--font-geist-sans), "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  @keyframes float-slow {
 
-  --radius-card: var(--radius-lg);
-  --radius-button: var(--radius-full);
-}
+    0%,
+    100% {
+      transform: translateY(0);
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Optional: Tweaks for dark mode if user wants it, but for now assuming the palette is primary.
-       Often these specific palettes are "light mode" focused. 
-       I will inverse slightly for dark mode, or keep it light if it's a specific brand vibe.
-       Given the request for "these colors", I'll stick close to them.
-       Let's make dark mode a deep version of the Plum. */
-    --background: #1a0f12;
-    /* Very dark plum */
-    --foreground: #F5E6E8;
-    /* Very light plum/white */
-    --light-gray: rgba(255, 255, 255, 0.05);
-    --warm-gray: #d4b8be;
+    50% {
+      transform: translateY(-15px);
+    }
+  }
 
-    --dark-forest-green: #E5F9E0;
-    /* Light text for headings */
+  @keyframes sway {
+    0% {
+      transform: rotate(-2deg);
+    }
+
+    100% {
+      transform: rotate(2deg);
+    }
   }
 }
 
@@ -112,9 +95,10 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
-  line-height: 1.7;
-  /* Increased line-height for readability */
+  font-family: var(--font-body);
+  line-height: 1.8;
+  /* Relaxed reading */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 h1,
@@ -124,123 +108,118 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  /* Slightly lighter weight than 700 for elegance */
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  /* Tight tracking for modern feel */
+  font-weight: 700;
+  color: var(--deep-kelp);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
-/* Utilities */
-.text-heading {
-  font-family: var(--font-heading);
-}
+/* --- Organic Utilities --- */
 
-.bg-ocean-gradient {
-  background: linear-gradient(180deg, var(--midnight-navy) 0%, var(--deep-ocean-blue) 100%);
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--ocean-green), var(--coastal-blue));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Glassmorphism Utilities */
-.glass {
+/* 1. Paper Texture Card -> Glass Card */
+.card-paper {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2rem;
+  /* More organic roundness */
+  padding: 2.5rem 2rem;
+  box-shadow:
+    0 4px 20px -1px rgba(0, 47, 115, 0.05),
+    /* Hint of mist-blue */
+    0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
 }
 
-.dark .glass {
-  background: rgba(2, 6, 23, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.card-paper:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 25px 30px -5px rgba(0, 47, 115, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(92, 170, 215, 0.3);
+  /* Hint of seafoam-teal */
 }
 
-/* Button Base Styles - Minimalist & Soft */
-.btn-primary {
-  background-color: var(--ocean-green);
-  color: white;
-  padding: 12px 32px;
-  border-radius: var(--radius-button);
+/* 2. Organic Buttons */
+.btn-nature-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background-color: var(--seafoam-teal);
+  color: var(--white);
   font-family: var(--font-heading);
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+  font-weight: 700;
+  border-radius: 9999px;
+  /* Pill shape */
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 15px rgba(92, 170, 215, 0.4);
+  letter-spacing: 0.02em;
 }
 
-.btn-primary:hover {
-  background-color: #059669;
-  /* Emerald 600 */
-  transform: translateY(-1px);
-  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+.btn-nature-primary:hover {
+  background-color: #4a90b8;
+  /* Slightly darker blue */
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(92, 170, 215, 0.5);
 }
 
-.btn-secondary {
+.btn-nature-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.4rem;
   background-color: transparent;
-  border: 1px solid var(--foreground);
-  /* Thinner border */
-  color: var(--foreground);
-  padding: 11px 31px;
-  /* visual alignment with primary */
-  border-radius: var(--radius-button);
+  color: var(--deep-kelp);
+  border: 2px solid var(--mist-blue);
   font-family: var(--font-heading);
-  font-weight: 500;
+  font-weight: 700;
+  border-radius: 9999px;
   transition: all 0.3s ease;
 }
 
-.btn-secondary:hover {
-  background-color: var(--foreground);
-  color: var(--background);
-  transform: translateY(-1px);
+.btn-nature-secondary:hover {
+  border-color: var(--seafoam-teal);
+  color: var(--seafoam-teal);
+  background-color: rgba(127, 181, 181, 0.05);
 }
 
-.btn-cta {
-  background: linear-gradient(135deg, var(--deep-ocean-blue), #1e293b);
-  color: white;
-  padding: 16px 48px;
-  border-radius: var(--radius-button);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
+/* 3. Text Styles */
+.text-serif {
+  font-family: var(--font-serif);
 }
 
-.btn-cta:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.3);
+.text-soft-body {
+  color: var(--driftwood);
+  font-weight: 400;
 }
 
-/* Card Styles - Soft & Minimal */
-.card {
-  background-color: white;
-  border-radius: var(--radius-card);
-  padding: 32px;
-  border: 1px solid var(--light-gray);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-  /* very subtle shadow */
-  transition: all 0.3s ease;
+/* 4. Shapes */
+.shape-blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: sway 10s ease-in-out infinite alternate;
 }
 
-.dark .card {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.05);
+/* Section Dividers */
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
 
-.card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-  transform: translateY(-2px);
-  border-color: rgba(0, 0, 0, 0.05);
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
 }
 
-.all-caps {
-  letter-spacing: 1px;
-  /* Increased tracking */
-  text-transform: uppercase;
-  font-size: 0.85em;
-  /* Slightly smaller */
-  font-weight: 600;
+.wave-divider .shape-fill {
+  fill: var(--sandstone);
 }

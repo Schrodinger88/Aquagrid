@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sprout } from "lucide-react";
 
 const FRAME_COUNT = 240;
 
@@ -34,7 +34,6 @@ export default function HeroScroll() {
                     setPercentLoaded(Math.round((loadedCount / FRAME_COUNT) * 100));
                 };
                 img.onerror = () => {
-                    // Handle missing frames gracefully-ish
                     console.error(`Failed to load frame ${i}`);
                 };
             }
@@ -56,14 +55,7 @@ export default function HeroScroll() {
         let currentProgress = 0;
 
         const render = () => {
-            // Lerp current progress towards target
-            // 0.1 factor triggers a smooth "catch up" feel
             const diff = targetProgress - currentProgress;
-
-            // If the difference is very small, snap to target to save calculation, 
-            // unless we are continuously scrolling. 
-            // However, typical lerp usage just runs. 
-            // We can optimize by stopping if abs(diff) < 0.0001
 
             if (Math.abs(diff) > 0.0001) {
                 currentProgress += diff * 0.1;
@@ -71,7 +63,6 @@ export default function HeroScroll() {
                 currentProgress = targetProgress;
             }
 
-            // Calculate Frame Index based on smoothed progress
             const frameIndex = Math.floor(currentProgress * (FRAME_COUNT - 1));
             const img = images[frameIndex];
 
@@ -94,6 +85,9 @@ export default function HeroScroll() {
                 }
 
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
+                // Apply a soft light filter to blending the footage with the new palette
+                // Note: We can't do complex CSS filters inside drawImage easily, so we handle it on the canvas element CSS or global compositing
+                ctx.globalAlpha = 1;
                 ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
             }
 
@@ -108,7 +102,7 @@ export default function HeroScroll() {
                 if (currentProgress > fadeStart) {
                     const fadeProgress = (currentProgress - fadeStart) / (fadeEnd - fadeStart);
                     opacity = 1 - Math.max(0, Math.min(1, fadeProgress));
-                    translateY = -50 * fadeProgress;
+                    translateY = -30 * fadeProgress; // Gentle float up
                 }
 
                 textRef.current.style.opacity = opacity.toString();
@@ -129,7 +123,6 @@ export default function HeroScroll() {
 
             if (maxScroll <= 0) return;
 
-            // Update Target, not Frame directly
             let progress = scrollDist / maxScroll;
             progress = Math.max(0, Math.min(1, progress));
             targetProgress = progress;
@@ -139,7 +132,6 @@ export default function HeroScroll() {
             if (canvas) {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
-                // Force an immediate re-calc of target
                 onScroll();
             }
         };
@@ -147,9 +139,8 @@ export default function HeroScroll() {
         window.addEventListener("resize", handleResize);
         window.addEventListener("scroll", onScroll);
 
-        // Initial setup
         handleResize();
-        render(); // Start loop
+        render();
 
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -162,21 +153,26 @@ export default function HeroScroll() {
         <div
             ref={containerRef}
             style={{ height: "400vh" }}
-            className="relative bg-black"
+            className="relative bg-sandstone"
         >
             <div className="sticky top-0 w-full h-screen overflow-hidden">
                 <canvas
                     ref={canvasRef}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-90 sepia-[.2] contrast-[0.9] brightness-[1.1]"
                 />
+
+                {/* Soft Gradient Overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-b from-sandstone/30 via-transparent to-sandstone/80 pointer-events-none"></div>
 
                 {/* Loading Indicator */}
                 {percentLoaded < 100 && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-50 pointer-events-none transition-opacity duration-500">
-                        <div className="flex flex-col items-center gap-4">
-                            <div className="w-12 h-12 border-4 border-ocean-green border-t-transparent rounded-full animate-spin"></div>
-                            <div className="text-white/80 font-sans text-sm font-medium tracking-wider uppercase">
-                                Loading Experience... {percentLoaded}%
+                    <div className="absolute inset-0 flex items-center justify-center bg-sandstone z-50 transition-opacity duration-1000">
+                        <div className="flex flex-col items-center gap-6">
+                            <div className="relative w-16 h-16">
+                                <Sprout className="w-16 h-16 text-seafoam-teal animate-bounce" />
+                            </div>
+                            <div className="text-deep-kelp font-serif text-xl italic tracking-wider">
+                                Growing... {percentLoaded}%
                             </div>
                         </div>
                     </div>
@@ -184,37 +180,38 @@ export default function HeroScroll() {
 
                 {/* Parallax Overlay Content */}
                 <div ref={textRef} className="absolute inset-0 flex items-center justify-center z-10 will-change-transform">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                        <div className="max-w-3xl">
-                            <h1 className="text-5xl md:text-7xl mb-8 text-white font-bold tracking-tight text-heading drop-shadow-2xl">
-                                Turning the Tide on <br />
-                                <span className="text-gradient">Ocean Acidification</span>
-                            </h1>
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+                        <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-mist-blue/30 shadow-sm animate-float-slow">
+                            <Sprout className="w-5 h-5 text-seafoam-teal" />
+                            <span className="text-deep-kelp font-serif tracking-wide text-sm">Cultivating Balance</span>
+                        </div>
 
-                            <p className="text-xl md:text-2xl text-slate-100 mb-12 leading-relaxed drop-shadow-lg max-w-2xl font-light">
-                                Scalable kelp poop solutions that restore marine ecosystems while creating sustainable revenue for coastal communities.
-                            </p>
+                        <h1 className="text-6xl md:text-8xl mb-8 font-serif font-bold text-deep-kelp leading-tight">
+                            Heal the Ocean, <br />
+                            <span className="italic text-seafoam-teal">Naturally.</span>
+                        </h1>
 
-                            <div className="flex flex-col sm:flex-row gap-6">
-                                <a href="#solution" className="btn-cta inline-flex items-center justify-center gap-3 group">
-                                    Get Started
-                                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                                </a>
-                                <a href="#impact" className="btn-secondary !text-white !border-white/40 hover:!bg-white hover:!text-deep-ocean-blue backdrop-blur-sm">
-                                    View Demo
-                                </a>
-                                <a href="#contact" className="btn-secondary !text-white !border-white/40 hover:!bg-white hover:!text-deep-ocean-blue backdrop-blur-sm">
-                                    Contact Us
-                                </a>
-                            </div>
+                        <p className="text-xl md:text-2xl text-driftwood mb-12 leading-relaxed max-w-2xl mx-auto font-sans font-light bg-white/40 p-6 rounded-2xl backdrop-blur-sm">
+                            We farm <span className="text-deep-kelp font-semibold">Resilient Kelp</span> to restore marine ecosystems and support coastal communities.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                            <a href="#mission" className="btn-nature-primary text-lg">
+                                Our Mission
+                            </a>
+                            <a href="#impact" className="btn-nature-secondary text-lg group">
+                                View Impact
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 {/* Scroll Indicator at bottom */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce opacity-50">
-                    <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-2">
-                        <div className="w-1 h-2 bg-white rounded-full animate-pulse"></div>
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">
+                    <div className="flex flex-col items-center gap-3 opacity-60">
+                        <span className="text-xs uppercase tracking-[0.2em] text-deep-kelp font-sans">Scroll to Explore</span>
+                        <div className="w-[1px] h-16 bg-deep-kelp/30"></div>
                     </div>
                 </div>
 
