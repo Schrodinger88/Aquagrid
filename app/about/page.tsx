@@ -2,38 +2,38 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Droplets, Fish, AlertTriangle, Target, Eye, Heart, Users, Award, BookOpen } from "lucide-react";
+import { Target, Eye, Droplets, Fish, AlertTriangle, Users, Award, BookOpen } from "lucide-react";
 
 export default function About() {
     return (
-        <div className="min-h-screen">
+        <div className="flex flex-col">
             {/* Hero */}
-            <section className="section-padding bg-gradient-to-br from-deep-forest via-[#023808] to-midnight text-white relative overflow-hidden">
+            <section className="relative overflow-hidden bg-gradient-to-br from-deep-forest via-[#023808] to-midnight py-20 lg:py-28">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 right-20 w-96 h-96 bg-sky-blue rounded-full blur-[150px]" />
                 </div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="max-w-3xl">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-8 text-sm text-white/80 font-medium">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8 text-sm text-white font-bold tracking-wider uppercase backdrop-blur-md">
                             About Us
                         </span>
-                        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white leading-[1.05]">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-[1.1]">
                             Green Solutions for <span className="text-sky-blue">Blue Oceans</span>
                         </h1>
-                        <p className="text-xl text-white/60 leading-relaxed">
-                            Aqua Grid was founded by students at the University of Ottawa through Enactus uOttawa, who saw an opportunity to combine marine science, engineering, and entrepreneurship to address one of our planet's most urgent challenges.
+                        <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl">
+                            Aqua Grid was founded by university students through Enactus, combining marine science, engineering, and entrepreneurship to address one of our planet's most urgent challenges.
                         </p>
                     </div>
                 </div>
             </section>
 
             {/* Mission & Vision */}
-            <section className="section-padding bg-white">
+            <section className="section-padding bg-white relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 gap-10">
                         <div className="card-solid p-10">
-                            <div className="w-14 h-14 bg-light-blue rounded-2xl flex items-center justify-center mb-6">
-                                <Target className="w-7 h-7 text-sky-blue" />
+                            <div className="w-16 h-16 bg-light-blue rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+                                <Target className="w-8 h-8 text-sky-blue" />
                             </div>
                             <h3 className="text-2xl font-bold text-deep-forest mb-4">Our Mission</h3>
                             <p className="text-slate leading-relaxed text-lg">
@@ -41,8 +41,8 @@ export default function About() {
                             </p>
                         </div>
                         <div className="card-solid p-10">
-                            <div className="w-14 h-14 bg-light-green rounded-2xl flex items-center justify-center mb-6">
-                                <Eye className="w-7 h-7 text-kelp-green" />
+                            <div className="w-16 h-16 bg-light-green rounded-2xl flex items-center justify-center mb-8 shadow-sm">
+                                <Eye className="w-8 h-8 text-kelp-green" />
                             </div>
                             <h3 className="text-2xl font-bold text-deep-forest mb-4">Our Vision</h3>
                             <p className="text-slate leading-relaxed text-lg">
@@ -54,14 +54,14 @@ export default function About() {
             </section>
 
             {/* The Crisis */}
-            <section className="section-padding bg-cream relative overflow-hidden">
+            <section className="section-padding bg-cream relative overflow-hidden border-t border-border">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-blue/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center mb-20">
+                    <div className="text-center mb-16">
                         <span className="badge badge-blue mb-6">The Challenge</span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-6">The Crisis We're Solving</h2>
-                        <p className="text-lg text-slate max-w-3xl mx-auto">
-                            Ocean acidification has increased by <strong className="text-deep-forest">30%</strong> since the Industrial Revolution, with projections suggesting a <strong className="text-deep-forest">150% rise</strong> by the end of the century.
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-deep-forest">The Crisis We're Solving</h2>
+                        <p className="text-lg text-slate max-w-3xl mx-auto leading-relaxed">
+                            Ocean acidification has increased by <strong className="text-ocean-blue">30%</strong> since the Industrial Revolution, with projections suggesting a <strong className="text-ocean-blue">150% rise</strong> by the end of the century.
                         </p>
                     </div>
 
@@ -86,8 +86,8 @@ export default function About() {
                                 color: "bg-light-green",
                             },
                         ].map((item, i) => (
-                            <div key={i} className="card-solid group">
-                                <div className={`w-14 h-14 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                            <div key={i} className="card-solid p-8 group">
+                                <div className={`w-14 h-14 ${item.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm`}>
                                     {item.icon}
                                 </div>
                                 <h3 className="text-xl font-bold mb-3 text-deep-forest">{item.title}</h3>
@@ -98,64 +98,37 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Why Aqua Grid */}
-            <section className="section-padding bg-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span className="badge badge-green mb-6">Why Us</span>
-                    <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Why Aqua Grid?</h2>
-                    <p className="text-xl text-slate leading-relaxed mb-12">
-                        Aqua Grid transforms the problem into an opportunity. Our modular kelp farming systems don't just capture carbon — they actively <span className="text-sky-blue font-bold">restore ocean chemistry</span>, create thriving marine habitats, and generate sustainable income.
-                    </p>
-
-                    <div className="grid sm:grid-cols-3 gap-6">
-                        {[
-                            { icon: <Droplets className="w-6 h-6 text-sky-blue" />, title: "Siphon Pump System", desc: "Unique innovation to increase nutrient availability year-round" },
-                            { icon: <Users className="w-6 h-6 text-kelp-green" />, title: "Easy to Use", desc: "Designed for any fish farmer — simple setup and minimal maintenance" },
-                            { icon: <Award className="w-6 h-6 text-ocean-blue" />, title: "Award Winning", desc: "Youth Impact Challenge placement, Enactus Canada grant recipient" },
-                        ].map((item, i) => (
-                            <div key={i} className="p-6 rounded-2xl bg-cream border border-border text-center">
-                                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mx-auto mb-4 shadow-sm">
-                                    {item.icon}
-                                </div>
-                                <h4 className="font-bold text-deep-forest mb-2">{item.title}</h4>
-                                <p className="text-sm text-slate">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Team */}
-            <section className="section-padding bg-cream">
+            <section className="section-padding bg-white border-t border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <span className="badge badge-blue mb-6">Our Team</span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Student-Driven. Science-Backed.</h2>
-                        <p className="text-lg text-slate max-w-2xl mx-auto">
+                        <span className="badge badge-green mb-6">Our Team</span>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-deep-forest">Student-Driven. Science-Backed.</h2>
+                        <p className="text-lg text-slate max-w-2xl mx-auto leading-relaxed">
                             Founded through Enactus uOttawa, our multidisciplinary team combines expertise across marine science, engineering, and sustainable business.
                         </p>
                     </div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { icon: <BookOpen className="w-6 h-6" />, title: "Marine Biology", desc: "Oceanography & ecosystem research" },
-                            { icon: <Target className="w-6 h-6" />, title: "Engineering", desc: "Aquaculture system design" },
-                            { icon: <Heart className="w-6 h-6" />, title: "Environmental Policy", desc: "Sustainability & regulation" },
-                            { icon: <Users className="w-6 h-6" />, title: "Business Dev", desc: "Go-to-market strategy" },
+                            { icon: <BookOpen className="w-6 h-6" />, title: "Marine Biology", desc: "Oceanography & ecosystem research", color: "text-sky-blue", bg: "bg-light-blue" },
+                            { icon: <Target className="w-6 h-6" />, title: "Engineering", desc: "Aquaculture system design", color: "text-kelp-green", bg: "bg-light-green" },
+                            { icon: <Award className="w-6 h-6" />, title: "Innovation", desc: "Youth Impact Challenge innovators", color: "text-ocean-blue", bg: "bg-blue-50" },
+                            { icon: <Users className="w-6 h-6" />, title: "Business Dev", desc: "Sustainable Go-to-market strategy", color: "text-sky-blue", bg: "bg-light-blue" },
                         ].map((item, i) => (
                             <div key={i} className="card-solid text-center p-8">
-                                <div className="w-14 h-14 rounded-2xl bg-light-blue flex items-center justify-center mx-auto mb-4 text-sky-blue">
+                                <div className={`w-16 h-16 rounded-2xl ${item.bg} flex items-center justify-center mx-auto mb-6 ${item.color} shadow-sm`}>
                                     {item.icon}
                                 </div>
-                                <h4 className="font-bold text-deep-forest mb-2">{item.title}</h4>
-                                <p className="text-sm text-slate">{item.desc}</p>
+                                <h4 className="font-bold text-deep-forest mb-2 text-lg">{item.title}</h4>
+                                <p className="text-sm text-slate leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
 
-                    <div className="text-center mt-12">
-                        <Link href="/contact" className="btn-primary px-8 py-4">
-                            Join Our Team
+                    <div className="text-center mt-16">
+                        <Link href="/contact" className="btn-primary px-10 py-4 shadow-lg shadow-sky-blue/20">
+                            Get in Touch
                         </Link>
                     </div>
                 </div>

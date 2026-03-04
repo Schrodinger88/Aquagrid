@@ -1,51 +1,51 @@
-# Aquagrid Brand Guidelines - Nature Pivot (Revised)
+# Aqua Grid Brand Guidelines
+
+Based on the official Brand Kit from the Drive Download.
 
 ## Brand Overview
 
-**Mission:** Cultivating ocean health through sustainable kelp farming.
+**Slogan:** "Green Solutions for Blue Oceans"
 
-**Vision:** A thriving blue planet where coastal communities and marine ecosystems flourish together.
-
-**Brand Personality:**
-- **Nurturing**
-- **Organic**
-- **Grounded**
+**Mission:** To remove greenhouse gases from waters, produce oxygen, and generate revenue for coastal communities through modular kelp farming systems.
 
 ---
 
-## Color Palette - "User Selection"
+## Logomark and Variations
 
-The user has defined a specific natural palette:
+- **Primary Logo:** "FINAL Aqua Grid Logo.png"
+- **Alternate:** "AQUA GRID - white text.png"
+- **Icon Only:** "Logo Element Aqua Grid.png"
+- **Centered:** "Logo Lower Center Reg.png"
 
-**Primary Teal** - `#75b9be`
-- Usage: Primary buttons, headings, logo.
+---
 
-**Mist Blue** - `#a8ccc9`
-- Usage: Secondary backgrounds, subtle borders.
+## Color Palette
 
-**Sage Green** - `#b3d6c6`
-- Usage: Cards, secondary accents.
+The official Aqua Grid colors:
 
-**Pale Sunlight** - `#dceab2`
-- Usage: Warm backgrounds, highlights.
+- **Dark Green:** `#012604` — Primary for contrast, deep backgrounds, and strong headings.
+- **Green:** `#125A1A` — Secondary brand color.
+- **Navy Blue:** `#003273` — Water and marine technical sections.
+- **Light Blue:** `#5AABD9` — Highlights, links, accents.
+- **Dark Navy:** `#00003E` — Deep backgrounds and footers.
 
-**Bright Kelp** - `#c7d66d`
-- Usage: Active states, growth indicators, icons.
+*Recommended Base and Neutral extensions:*
+- Clean White (`#FFFFFF`) for crisp backgrounds.
+- Midnight (`#0A0F1D`) for premium dark sections.
+- Ghost/Cream (`#F8FAFC` or `#FAFAF5`) for soft section backgrounds.
 
 ---
 
 ## Typography
 
-### Primary Font: Playfair Display (Serif)
-- **Usage:** Headings (H1-H4)
-
-### Secondary Font: Nunito (Rounded Sans)
-- **Usage:** Body text
+- **Primary Font (Headings):** TeX Gyre Adventor Bold
+  - *Web Alternative:* Inter or Montserrat (Bold/Extrabold)
+- **Secondary Font (Body):** Flatory Sans SemiCondensed
+  - *Web Alternative:* Inter or Roboto (Regular/Medium)
 
 ---
 
-## Visual Style
+## Visual Style for Investors & Partners
 
-- **Textures:** Subtle paper grain.
-- **Shapes:** Organic blobs, waves.
-- **No Tech:** No neon, no gradients, no dark mode.
+- **Aesthetic:** Premium, scientific, investor-focused, dynamic, and trustworthy.
+- **Styling:** Use clean glassmorphism for dark sections, robust white cards for data, high-contrast typography, and smooth micro-animations. Elevate the visual quality to impress stakeholders and government partners.

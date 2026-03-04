@@ -2,25 +2,25 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, Leaf, Waves, ArrowRight, Settings, Zap, Shield, Globe, TrendingUp, Clock } from "lucide-react";
+import { Settings, Zap, Shield, Globe, TrendingUp, Clock, CheckCircle2 } from "lucide-react";
 
 export default function Solutions() {
     return (
-        <div className="min-h-screen">
+        <div className="flex flex-col">
             {/* Hero */}
-            <section className="section-padding bg-gradient-to-br from-deep-forest via-[#023808] to-midnight text-white relative overflow-hidden">
+            <section className="relative overflow-hidden bg-gradient-to-br from-deep-forest via-[#023808] to-midnight py-20 lg:py-28">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute bottom-0 left-20 w-96 h-96 bg-kelp-green rounded-full blur-[150px]" />
                 </div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="max-w-3xl">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-8 text-sm text-white/80 font-medium">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8 text-sm text-white font-bold tracking-wider uppercase backdrop-blur-md">
                             Technology
                         </span>
-                        <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white leading-[1.05]">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-[1.1]">
                             Modular Kelp Farming <span className="text-sky-blue">Technology</span>
                         </h1>
-                        <p className="text-xl text-white/60 leading-relaxed">
+                        <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl">
                             Aqua Grid's patent-pending system combines cutting-edge marine engineering with nature's most powerful carbon capture organism: kelp.
                         </p>
                     </div>
@@ -28,13 +28,13 @@ export default function Solutions() {
             </section>
 
             {/* System Design */}
-            <section className="section-padding bg-white">
+            <section className="section-padding bg-white relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <div>
                             <span className="badge badge-green mb-6">System Design</span>
-                            <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
-                                Engineered for <span className="text-sky-blue">Impact</span>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight text-deep-forest">
+                                Engineered for <span className="text-kelp-green">Impact</span>
                             </h2>
                             <p className="text-lg text-slate mb-10 leading-relaxed">
                                 Our system uses a metal plate frame held in place by buoys, with kelp growth lines growing vertically. The standard setup is 200ft × 10ft, but our modular design is fully customizable.
@@ -60,7 +60,7 @@ export default function Solutions() {
                                 ].map((item, i) => (
                                     <div key={i} className="flex gap-4 group p-4 -ml-4 rounded-2xl hover:bg-cream transition-colors">
                                         <div className="shrink-0 mt-0.5">
-                                            <div className="w-10 h-10 rounded-xl bg-light-blue flex items-center justify-center group-hover:scale-110 transition-transform">
+                                            <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
                                                 {item.icon}
                                             </div>
                                         </div>
@@ -75,27 +75,30 @@ export default function Solutions() {
 
                         {/* Visual */}
                         <div className="relative">
-                            <div className="bg-gradient-to-br from-light-blue to-light-green rounded-3xl p-12 flex flex-col items-center justify-center min-h-[500px] border border-border">
+                            <div className="bg-gradient-to-br from-light-blue to-light-green rounded-[2.5rem] p-12 flex flex-col items-center justify-center min-h-[550px] border border-border shadow-inner">
                                 <Image
                                     src="/logo-stacked.png"
                                     alt="Aqua Grid System Design"
-                                    width={180}
-                                    height={180}
-                                    className="mb-8"
+                                    width={200}
+                                    height={200}
+                                    className="mb-8 drop-shadow-xl"
                                 />
-                                <div className="text-center">
-                                    <div className="text-4xl font-extrabold text-deep-forest mb-2">200ft × 10ft</div>
-                                    <p className="text-slate">Standard Unit Size</p>
+                                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl w-full max-w-sm text-center border border-white relative mt-4">
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ocean-blue text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                                        Standard Unit
+                                    </div>
+                                    <div className="text-4xl font-bold text-deep-forest mt-2 mb-1">200ft × 10ft</div>
+                                    <p className="text-slate text-sm font-medium">Fully Customizable Dimensions</p>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-4 mt-8 w-full max-w-sm">
-                                    <div className="bg-white/80 rounded-2xl p-4 text-center">
-                                        <div className="text-2xl font-extrabold text-deep-forest">1,130</div>
-                                        <div className="text-xs text-slate font-semibold uppercase tracking-wider">kg CO₂/year</div>
+                                <div className="grid grid-cols-2 gap-4 mt-6 w-full max-w-sm">
+                                    <div className="bg-white/90 backdrop-blur-md border border-white rounded-2xl p-4 text-center shadow-lg">
+                                        <div className="text-2xl font-bold text-deep-forest">1,130</div>
+                                        <div className="text-xs text-slate font-bold uppercase tracking-wider mt-1">kg CO₂/year</div>
                                     </div>
-                                    <div className="bg-white/80 rounded-2xl p-4 text-center">
-                                        <div className="text-2xl font-extrabold text-deep-forest">1,100</div>
-                                        <div className="text-xs text-slate font-semibold uppercase tracking-wider">kg O₂/year</div>
+                                    <div className="bg-white/90 backdrop-blur-md border border-white rounded-2xl p-4 text-center shadow-lg">
+                                        <div className="text-2xl font-bold text-deep-forest">1,100</div>
+                                        <div className="text-xs text-slate font-bold uppercase tracking-wider mt-1">kg O₂/year</div>
                                     </div>
                                 </div>
                             </div>
@@ -105,12 +108,12 @@ export default function Solutions() {
             </section>
 
             {/* How it Works */}
-            <section className="section-padding bg-cream">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-20">
+            <section className="section-padding bg-cream border-t border-border">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
                         <span className="badge badge-blue mb-6">Process</span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">How It Works</h2>
-                        <p className="text-lg text-slate">Simple deployment, continuous impact</p>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-deep-forest">How It Works</h2>
+                        <p className="text-lg text-slate max-w-2xl mx-auto">Simple deployment, continuous impact and effortless harvest.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
@@ -140,16 +143,16 @@ export default function Solutions() {
                                 desc: "Annual harvest requires only cutting kelp and installing new growth lines. Revenue from kelp sales plus increased shellfish farm yield.",
                             },
                         ].map((item, i) => (
-                            <div key={i} className="card-solid p-8 group">
-                                <div className="flex items-start gap-5">
-                                    <div className="text-4xl font-extrabold text-sky-blue/20">{item.step}</div>
-                                    <div>
-                                        <div className="w-10 h-10 rounded-xl bg-light-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                            {item.icon}
-                                        </div>
-                                        <h3 className="text-xl font-bold text-deep-forest mb-3">{item.title}</h3>
-                                        <p className="text-slate leading-relaxed">{item.desc}</p>
+                            <div key={i} className="card-solid p-10 group relative overflow-hidden">
+                                <div className="absolute -right-4 -top-6 text-9xl font-extrabold text-slate/[0.03] pointer-events-none group-hover:text-sky-blue/[0.05] transition-colors duration-500">
+                                    {item.step}
+                                </div>
+                                <div className="relative z-10">
+                                    <div className="w-14 h-14 rounded-2xl bg-light-blue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+                                        {item.icon}
                                     </div>
+                                    <h3 className="text-2xl font-bold text-deep-forest mb-4">{item.title}</h3>
+                                    <p className="text-slate leading-relaxed text-lg">{item.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -158,11 +161,11 @@ export default function Solutions() {
             </section>
 
             {/* Differentiators */}
-            <section className="section-padding bg-white">
+            <section className="section-padding bg-white border-t border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="badge badge-green mb-6">Competitive Edge</span>
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">What Sets Us Apart</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-deep-forest">What Sets Us Apart</h2>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -170,44 +173,28 @@ export default function Solutions() {
                             {
                                 title: "Siphon Pump System",
                                 desc: "Unique innovation increases nutrient availability year-round, unlike traditional kelp farms that depend on seasonal conditions.",
-                                icon: <Zap className="w-7 h-7 text-sky-blue" />,
+                                icon: <Zap className="w-8 h-8 text-sky-blue" />,
                             },
                             {
                                 title: "Ease of Harvesting",
                                 desc: "Innovative pulley system makes harvesting simple and efficient. Requires minimal manpower and saves significant time.",
-                                icon: <CheckCircle2 className="w-7 h-7 text-kelp-green" />,
+                                icon: <CheckCircle2 className="w-8 h-8 text-kelp-green" />,
                             },
                             {
                                 title: "Farmer-First Design",
                                 desc: "Built for fish farmers — user friendly, low maintenance, and adaptable. No specialized training or equipment required.",
-                                icon: <Leaf className="w-7 h-7 text-ocean-blue" />,
+                                icon: <Shield className="w-8 h-8 text-ocean-blue" />,
                             },
                         ].map((item, i) => (
-                            <div key={i} className="card-solid p-8 text-center group">
-                                <div className="w-16 h-16 rounded-2xl bg-light-blue flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                            <div key={i} className="card-solid p-10 text-center group">
+                                <div className="w-20 h-20 rounded-[1.5rem] bg-cream border border-border flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform shadow-sm">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-deep-forest mb-3">{item.title}</h3>
-                                <p className="text-slate leading-relaxed">{item.desc}</p>
+                                <h3 className="text-2xl font-bold text-deep-forest mb-4">{item.title}</h3>
+                                <p className="text-slate leading-relaxed text-lg">{item.desc}</p>
                             </div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* CTA */}
-            <section className="section-padding bg-gradient-to-br from-deep-forest to-midnight text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white">
-                        Ready to Deploy?
-                    </h2>
-                    <p className="text-xl text-white/60 mb-10 max-w-2xl mx-auto">
-                        Learn how Aqua Grid can integrate with your fishery operations and start generating returns.
-                    </p>
-                    <Link href="/contact" className="btn-primary text-base px-10 py-4 shadow-xl shadow-sky-blue/20">
-                        Schedule a Consultation
-                        <ArrowRight className="w-5 h-5" />
-                    </Link>
                 </div>
             </section>
         </div>

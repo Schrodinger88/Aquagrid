@@ -26,8 +26,7 @@ export default function CountUpNumber({
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            (entries) => {
-                const [entry] = entries;
+            ([entry]) => {
                 if (entry.isIntersecting && !hasAnimated.current) {
                     setIsVisible(true);
                     hasAnimated.current = true;
@@ -36,13 +35,14 @@ export default function CountUpNumber({
             { threshold: 0.1 }
         );
 
-        if (countRef.current) {
-            observer.observe(countRef.current);
+        const currentRef = countRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (countRef.current) {
-                observer.unobserve(countRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, []);
@@ -56,34 +56,39 @@ export default function CountUpNumber({
         const animate = (timestamp: number) => {
             if (!startTime) startTime = timestamp;
             const progress = timestamp - startTime;
+
+            // Calculate progress percentage (0 to 1)
             const percentage = Math.min(progress / duration, 1);
 
-            // Easing function (easeOutExpo)
-            const easeOutExpo = (x: number): number => {
-                return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
-            };
+            // Ease out cubic easing
+            const easeOutCubic = 1 - Math.pow(1 - percentage, 3);
 
-            const currentCount = easeOutExpo(percentage) * end;
-
+            const currentCount = easeOutCubic * end;
             setCount(currentCount);
 
-            if (progress < duration) {
+            if (percentage < 1) {
                 animationFrame = requestAnimationFrame(animate);
             } else {
-                setCount(end);
+                setCount(end); // Ensure exact final value
             }
         };
 
         animationFrame = requestAnimationFrame(animate);
 
-        return () => cancelAnimationFrame(animationFrame);
+        return () => {
+            if (animationFrame) cancelAnimationFrame(animationFrame);
+        };
     }, [isVisible, end, duration]);
+
+    // Format the number with commas (e.g., 6500 -> 6,500)
+    const formattedCount = Number(count.toFixed(decimals)).toLocaleString('en-US', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+    });
 
     return (
         <span ref={countRef} className={className}>
-            {prefix}
-            {count.toFixed(decimals)}
-            {suffix}
+            {prefix}{formattedCount}{suffix}
         </span>
     );
 }
