@@ -70,11 +70,15 @@ export function Footer() {
                             <li className="text-white/40">University of Ottawa, ON</li>
                         </ul>
                         <div className="flex gap-4 mt-8">
-                            {[Linkedin, Twitter, Instagram].map((Icon, i) => (
-                                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-sky-blue hover:border-sky-blue transition-all">
-                                    <Icon className="w-4 h-4" />
-                                </a>
-                            ))}
+                            <a href="https://www.linkedin.com/company/aqua-grid" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all">
+                                <Linkedin className="w-4 h-4" />
+                            </a>
+                            <a href="https://twitter.com/aquagrid" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-sky-blue hover:border-sky-blue transition-all">
+                                <Twitter className="w-4 h-4" />
+                            </a>
+                            <a href="https://www.instagram.com/aquagrid.ca" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-[#E1306C] hover:border-[#E1306C] transition-all">
+                                <Instagram className="w-4 h-4" />
+                            </a>
                         </div>
                     </div>
                 </div>

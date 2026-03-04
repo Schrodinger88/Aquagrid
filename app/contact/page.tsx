@@ -79,6 +79,17 @@ export default function Contact() {
                                     ))}
                                 </ul>
                             </div>
+
+                            <div className="mt-8 bg-gradient-to-r from-sky-blue/10 to-transparent p-8 rounded-2xl border border-sky-blue/20 flex flex-col sm:flex-row gap-6 items-center justify-between">
+                                <div>
+                                    <h4 className="font-bold text-deep-forest text-xl mb-1">Fast Track: Book a Call</h4>
+                                    <p className="text-slate text-sm">Skip the form and select a time directly on our calendar.</p>
+                                </div>
+                                <a href="https://cal.com/aquagrid" target="_blank" rel="noopener noreferrer" className="btn-primary px-6 py-3 shrink-0">
+                                    Open Cal.com
+                                    <ArrowRight className="w-4 h-4" />
+                                </a>
+                            </div>
                         </div>
 
                         {/* Form */}
