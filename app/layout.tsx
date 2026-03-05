@@ -46,7 +46,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${nunito.variable} antialiased`}>
+      <body className={`${playfair.variable} ${nunito.variable} antialiased relative min-h-screen text-deep-forest bg-[#FAF9F6] z-0`}>
+        {/* Subtle Global Glassmorphism Background Orbs */}
+        <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-sky-blue/10 rounded-full blur-[120px]" />
+          <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] bg-kelp-green/5 rounded-full blur-[150px]" />
+          <div className="absolute bottom-[-10%] left-[20%] w-[30%] h-[30%] bg-ocean-blue/10 rounded-full blur-[120px]" />
+        </div>
         <Navbar />
         <main>{children}</main>
         <Footer />

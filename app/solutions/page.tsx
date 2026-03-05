@@ -1,202 +1,146 @@
 "use client";
 
 import Image from "next/image";
+import { MoveRight, Zap, Target, RefreshCw, BarChart3, Settings2, Leaf } from "lucide-react";
+import CountUpNumber from "@/components/CountUpNumber";
 import Link from "next/link";
-import { Settings, Zap, Shield, Globe, TrendingUp, Clock, CheckCircle2 } from "lucide-react";
 
 export default function Solutions() {
     return (
-        <div className="flex flex-col">
-            {/* Hero */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-deep-forest via-[#023808] to-midnight py-20 lg:py-28">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute bottom-0 left-20 w-96 h-96 bg-kelp-green rounded-full blur-[150px]" />
-                </div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="max-w-3xl">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8 text-sm text-white font-bold tracking-wider uppercase backdrop-blur-md">
-                            Technology
-                        </span>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-[1.1]">
-                            Modular Kelp Farming <span className="text-sky-blue">Technology</span>
+        <div className="bg-[#FAF9F6] min-h-screen text-deep-forest font-sans">
+
+            {/* Contained Hero Section */}
+            <section className="pt-8 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+                <div className="relative w-full h-[60vh] min-h-[500px] rounded-[2.5rem] overflow-hidden shadow-xl group">
+                    <Image
+                        src="/images/modular-rig.png"
+                        alt="Modular Kelp Rig in ocean"
+                        fill
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/90 via-deep-forest/40 to-transparent" />
+
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-sm font-bold tracking-widest uppercase mb-6 shadow-sm flex items-center gap-2">
+                            <Settings2 className="w-4 h-4 text-sky-blue" />
+                            The Aqua Grid Solution
+                        </div>
+                        <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-white mb-6 leading-tight tracking-tight max-w-5xl drop-shadow-md">
+                            Engineered for <span className="text-white">Scale.</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl">
-                            Aqua Grid's patent-pending system combines cutting-edge marine engineering with nature's most powerful carbon capture organism: kelp.
+                        <p className="text-lg md:text-xl text-white/90 max-w-2xl font-medium mb-10 drop-shadow-sm leading-relaxed">
+                            Our 200ft x 10ft modular grid relies on a patent-pending siphon pump system, maximizing nutrient availability year-round to ensure massive kelp yields.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* System Design */}
-            <section className="section-padding bg-white relative">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <span className="badge badge-green mb-6">System Design</span>
-                            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight text-deep-forest">
-                                Engineered for <span className="text-kelp-green">Impact</span>
-                            </h2>
-                            <p className="text-lg text-slate mb-10 leading-relaxed">
-                                Our system uses a metal plate frame held in place by buoys, with kelp growth lines growing vertically. The standard setup is 200ft × 10ft, but our modular design is fully customizable.
-                            </p>
+            {/* Main Solution Metrics */}
+            <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mb-16 max-w-3xl">
+                    <span className="text-kelp-green font-bold uppercase tracking-widest text-sm mb-4 block">• Scalable Economics</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6">Built for Rapid Deployment</h2>
+                    <p className="text-lg text-slate leading-relaxed">
+                        Aqua Grid brings kelp farming out of the cottage industry and into large-scale commercial viability through highly predictable, optimized modular rig frameworks.
+                    </p>
+                </div>
 
-                            <div className="space-y-6">
-                                {[
-                                    {
-                                        icon: <Settings className="w-5 h-5 text-sky-blue" />,
-                                        title: "Modular Design",
-                                        desc: "Scalable units adapt to any coastal environment. Customize size and configuration for your specific needs.",
-                                    },
-                                    {
-                                        icon: <Zap className="w-5 h-5 text-kelp-green" />,
-                                        title: "Siphon Pump Innovation",
-                                        desc: "Unique pump system increases nutrient availability for kelp year-round, boosting growth and carbon capture efficiency.",
-                                    },
-                                    {
-                                        icon: <Shield className="w-5 h-5 text-ocean-blue" />,
-                                        title: "Non-Disruptive Integration",
-                                        desc: "Designed to integrate into existing fisheries without interrupting current operations or marine activities.",
-                                    },
-                                ].map((item, i) => (
-                                    <div key={i} className="flex gap-4 group p-4 -ml-4 rounded-2xl hover:bg-cream transition-colors">
-                                        <div className="shrink-0 mt-0.5">
-                                            <div className="w-12 h-12 rounded-xl bg-white border border-border shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                {item.icon}
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-deep-forest text-lg mb-1">{item.title}</h4>
-                                            <p className="text-slate leading-relaxed">{item.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div className="glass-card p-10 group">
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="w-12 h-12 bg-light-green rounded-xl flex items-center justify-center border border-kelp-green/20 group-hover:bg-kelp-green transition-colors">
+                                <Target className="w-6 h-6 text-kelp-green group-hover:text-white transition-colors" />
                             </div>
+                            <h3 className="text-xl font-bold">Base Setup Cost</h3>
                         </div>
+                        <p className="text-slate mb-6 line-clamp-2">Complete materials, rigging, and seeding hardware for the fundamental 200x10 module.</p>
+                        <div className="text-5xl font-black text-deep-forest group-hover:text-kelp-green transition-colors">
+                            <CountUpNumber end={6500} prefix="$" />
+                        </div>
+                    </div>
 
-                        {/* Visual */}
-                        <div className="relative">
-                            <div className="bg-gradient-to-br from-light-blue to-light-green rounded-[2.5rem] p-12 flex flex-col items-center justify-center min-h-[550px] border border-border shadow-inner">
-                                <Image
-                                    src="/logo-stacked.png"
-                                    alt="Aqua Grid System Design"
-                                    width={200}
-                                    height={200}
-                                    className="mb-8 drop-shadow-xl"
-                                />
-                                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl w-full max-w-sm text-center border border-white relative mt-4">
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-ocean-blue text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider">
-                                        Standard Unit
-                                    </div>
-                                    <div className="text-4xl font-bold text-deep-forest mt-2 mb-1">200ft × 10ft</div>
-                                    <p className="text-slate text-sm font-medium">Fully Customizable Dimensions</p>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4 mt-6 w-full max-w-sm">
-                                    <div className="bg-white/90 backdrop-blur-md border border-white rounded-2xl p-4 text-center shadow-lg">
-                                        <div className="text-2xl font-bold text-deep-forest">1,130</div>
-                                        <div className="text-xs text-slate font-bold uppercase tracking-wider mt-1">kg CO₂/year</div>
-                                    </div>
-                                    <div className="bg-white/90 backdrop-blur-md border border-white rounded-2xl p-4 text-center shadow-lg">
-                                        <div className="text-2xl font-bold text-deep-forest">1,100</div>
-                                        <div className="text-xs text-slate font-bold uppercase tracking-wider mt-1">kg O₂/year</div>
-                                    </div>
-                                </div>
+                    <div className="glass-card p-10 group">
+                        <div className="flex items-center gap-4 mb-6">
+                            <div className="w-12 h-12 bg-light-blue rounded-xl flex items-center justify-center border border-ocean-blue/20 group-hover:bg-ocean-blue transition-colors">
+                                <RefreshCw className="w-6 h-6 text-ocean-blue group-hover:text-white transition-colors" />
                             </div>
+                            <h3 className="text-xl font-bold">Annual Maint.</h3>
+                        </div>
+                        <p className="text-slate mb-6 line-clamp-2">Routine upkeep, partial reseeding if necessary, and infrastructure checks.</p>
+                        <div className="text-5xl font-black text-deep-forest group-hover:text-ocean-blue transition-colors">
+                            <CountUpNumber end={600} prefix="$" />
+                        </div>
+                    </div>
+
+                    <div className="bg-deep-forest text-white p-10 rounded-[2rem] shadow-lg hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-kelp-green blur-3xl opacity-50 transition-opacity group-hover:opacity-80" />
+                        <div className="flex items-center gap-4 mb-6 relative z-10">
+                            <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/20">
+                                <BarChart3 className="w-6 h-6 text-sky-blue" />
+                            </div>
+                            <h3 className="text-xl font-bold">Annual Revenue</h3>
+                        </div>
+                        <p className="text-white/70 mb-6 relative z-10">Conservative projected revenue per module generated through raw biomass sales.</p>
+                        <div className="text-5xl font-black text-white relative z-10">
+                            <CountUpNumber end={3000} prefix="$" suffix="+" />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* How it Works */}
-            <section className="section-padding bg-cream border-t border-border">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <span className="badge badge-blue mb-6">Process</span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-deep-forest">How It Works</h2>
-                        <p className="text-lg text-slate max-w-2xl mx-auto">Simple deployment, continuous impact and effortless harvest.</p>
+            {/* Siphon Innovation Highlight */}
+            <section className="pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="glass-card p-12 md:p-16 relative flex flex-col md:flex-row items-center justify-between gap-12 group">
+                    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-light-blue rounded-full blur-[150px] opacity-50" />
+
+                    <div className="relative z-10 md:w-1/2">
+                        <div className="inline-flex items-center gap-2 bg-light-green text-kelp-green px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase mb-4 shadow-sm border border-kelp-green/10">
+                            <Zap className="w-4 h-4" /> Patent Pending
+                        </div>
+                        <h2 className="text-4xl font-bold mb-6 text-deep-forest">The Siphon Pump Advantage</h2>
+                        <p className="text-lg text-slate leading-relaxed mb-6">
+                            Unlike traditional ocean farming that depends heavily on seasonal upwelling for nutrients, our siphon pump technology creates an artificial upwelling loop.
+                        </p>
+                        <ul className="space-y-4 mb-8">
+                            {[
+                                "Unlocking year-round growing seasons",
+                                "Massive acceleration in carbon capture per unit",
+                                "Lower spatial footprints for high biomass yields"
+                            ].map((item, i) => (
+                                <li key={i} className="flex gap-4 items-start">
+                                    <Leaf className="w-5 h-5 text-kelp-green mt-1 shrink-0" />
+                                    <span className="text-slate font-medium">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {[
-                            {
-                                step: "01",
-                                icon: <Globe className="w-6 h-6 text-sky-blue" />,
-                                title: "Site Assessment & Planning",
-                                desc: "We identify optimal locations, obtain permits, and design a system tailored to your coastal conditions and existing operations.",
-                            },
-                            {
-                                step: "02",
-                                icon: <Settings className="w-6 h-6 text-kelp-green" />,
-                                title: "System Installation",
-                                desc: "Rapid deployment of modular units with minimal environmental disruption. Metal frame with buoys and vertical kelp growth lines.",
-                            },
-                            {
-                                step: "03",
-                                icon: <TrendingUp className="w-6 h-6 text-ocean-blue" />,
-                                title: "Growth & Monitoring",
-                                desc: "Kelp grows and absorbs greenhouse gases while producing oxygen. Our siphon pump system maintains nutrient availability year-round.",
-                            },
-                            {
-                                step: "04",
-                                icon: <Clock className="w-6 h-6 text-deep-forest" />,
-                                title: "Harvest & Repeat",
-                                desc: "Annual harvest requires only cutting kelp and installing new growth lines. Revenue from kelp sales plus increased shellfish farm yield.",
-                            },
-                        ].map((item, i) => (
-                            <div key={i} className="card-solid p-10 group relative overflow-hidden">
-                                <div className="absolute -right-4 -top-6 text-9xl font-extrabold text-slate/[0.03] pointer-events-none group-hover:text-sky-blue/[0.05] transition-colors duration-500">
-                                    {item.step}
-                                </div>
-                                <div className="relative z-10">
-                                    <div className="w-14 h-14 rounded-2xl bg-light-blue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
-                                        {item.icon}
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-deep-forest mb-4">{item.title}</h3>
-                                    <p className="text-slate leading-relaxed text-lg">{item.desc}</p>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="relative z-10 md:w-5/12 w-full">
+                        <div className="bg-sky-blue p-10 rounded-[2rem] shadow-2xl hover:scale-105 transition-transform duration-500">
+                            <h3 className="text-white font-bold text-lg mb-2 opacity-90">Payback Period</h3>
+                            <div className="text-6xl font-black text-white mb-2 leading-none">3 <span className="text-3xl font-bold">Years</span></div>
+                            <p className="text-white/90 font-medium">Fast return on investment, enabling communities to rapidly expand their local Aqua Grid networks.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Differentiators */}
-            <section className="section-padding bg-white border-t border-border">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <span className="badge badge-green mb-6">Competitive Edge</span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-deep-forest">What Sets Us Apart</h2>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                title: "Siphon Pump System",
-                                desc: "Unique innovation increases nutrient availability year-round, unlike traditional kelp farms that depend on seasonal conditions.",
-                                icon: <Zap className="w-8 h-8 text-sky-blue" />,
-                            },
-                            {
-                                title: "Ease of Harvesting",
-                                desc: "Innovative pulley system makes harvesting simple and efficient. Requires minimal manpower and saves significant time.",
-                                icon: <CheckCircle2 className="w-8 h-8 text-kelp-green" />,
-                            },
-                            {
-                                title: "Farmer-First Design",
-                                desc: "Built for fish farmers — user friendly, low maintenance, and adaptable. No specialized training or equipment required.",
-                                icon: <Shield className="w-8 h-8 text-ocean-blue" />,
-                            },
-                        ].map((item, i) => (
-                            <div key={i} className="card-solid p-10 text-center group">
-                                <div className="w-20 h-20 rounded-[1.5rem] bg-cream border border-border flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform shadow-sm">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-2xl font-bold text-deep-forest mb-4">{item.title}</h3>
-                                <p className="text-slate leading-relaxed text-lg">{item.desc}</p>
-                            </div>
-                        ))}
+            {/* Simple CTA */}
+            <section className="glass-card border-x-0 border-b-0 py-20 mt-12 rounded-none">
+                <div className="max-w-4xl mx-auto text-center px-4">
+                    <h2 className="text-3xl font-bold text-deep-forest mb-6">Ready to review the technical details?</h2>
+                    <div className="flex justify-center gap-4">
+                        <Link href="https://cal.com/aquagrid" target="_blank" className="btn-primary px-8 py-4 text-lg hidden sm:flex">
+                            Schedule Technical Review
+                        </Link>
+                        <Link href="/impact" className="btn-secondary px-8 py-4 text-lg flex">
+                            See Ocean Impact <MoveRight className="w-5 h-5" />
+                        </Link>
                     </div>
                 </div>
             </section>
+
         </div>
     );
 }

@@ -10,29 +10,26 @@ Based on the official Brand Kit from the Drive Download.
 
 ---
 
-## Logomark and Variations
+## Aqua Grid Brand Guidelines
 
-- **Primary Logo:** "FINAL Aqua Grid Logo.png"
-- **Alternate:** "AQUA GRID - white text.png"
-- **Icon Only:** "Logo Element Aqua Grid.png"
-- **Centered:** "Logo Lower Center Reg.png"
+## 1. Core Concept & Aesthetic
+Aqua Grid is positioning itself as a leader in sustainable ocean agriculture, heavily targeting enterprise partnerships, environmental foundations, and ethical investors. 
 
----
+The aesthetic is heavily inspired by leading marine conservation organizations. It is **bright, airy, and deeply organic**, relying on expansive whitespace (`#FAF9F6`), stunningly crisp AI imagery, and staggered, rounded masonry cards to create a highly premium, modern interface. **Dark mode gradients have been fully deprecated** in favor of this trustworthy, clean design.
 
-## Color Palette
+## 2. Color Palette (Ocean Conservation Psychology)
 
-The official Aqua Grid colors:
+Our palette balances trust and authority with natural growth and clarity:
 
-- **Dark Green:** `#012604` — Primary for contrast, deep backgrounds, and strong headings.
-- **Green:** `#125A1A` — Secondary brand color.
-- **Navy Blue:** `#003273` — Water and marine technical sections.
-- **Light Blue:** `#5AABD9` — Highlights, links, accents.
-- **Dark Navy:** `#00003E` — Deep backgrounds and footers.
+### Primary Colors
+- **Deep Navy (`#0A192F`)**: Replaces dark green as the core structural/text color. Symbolizes the deep ocean, creating a profound sense of trust, scientific authority, and stability.
+- **Emerald (`#059669`)**: Replaces standard green. A vibrant, lush kelp green symbolizing organic growth, environmental action, and life.
+- **Sky Blue (`#0EA5E9`)**: A highly energetic, clear ocean blue used for accents, links, and highlights, representing clarity and calm waters.
 
-*Recommended Base and Neutral extensions:*
-- Clean White (`#FFFFFF`) for crisp backgrounds.
-- Midnight (`#0A0F1D`) for premium dark sections.
-- Ghost/Cream (`#F8FAFC` or `#FAFAF5`) for soft section backgrounds.
+### Neutral / Background Colors
+- **Alabaster / Sea Salt (`#FAF9F6`)**: The primary global background color. A very soft, organic off-white that prevents harsh contrast and allows the vibrant blues/greens and card shadows to pop naturally.
+- **Crisp White (`#FFFFFF`)**: Used for the structural "cards" to separate content from the Alabaster background.
+- **The Abyss (`#020617`)**: A near-black midnight tone utilized exclusively for the Footer to create immediate visual closure.
 
 ---
 
