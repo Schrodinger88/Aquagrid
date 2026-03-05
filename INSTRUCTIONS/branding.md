@@ -1,6 +1,6 @@
 # Aqua Grid Brand Guidelines
 
-Based on the official Brand Kit from the Drive Download.
+Based on the official Brand Kit from the Drive Download (Branding Kit.png + Brand Kit - Aqua Grid.docx).
 
 ## Brand Overview
 
@@ -10,39 +10,45 @@ Based on the official Brand Kit from the Drive Download.
 
 ---
 
-## Aqua Grid Brand Guidelines
-
 ## 1. Core Concept & Aesthetic
-Aqua Grid is positioning itself as a leader in sustainable ocean agriculture, heavily targeting enterprise partnerships, environmental foundations, and ethical investors. 
 
-The aesthetic is heavily inspired by leading marine conservation organizations. It is **bright, airy, and deeply organic**, relying on expansive whitespace (`#FAF9F6`), stunningly crisp AI imagery, and staggered, rounded masonry cards to create a highly premium, modern interface. **Dark mode gradients have been fully deprecated** in favor of this trustworthy, clean design.
+Aqua Grid is a leader in sustainable ocean agriculture, targeting enterprise partnerships, environmental foundations, and ethical investors.
 
-## 2. Color Palette (Ocean Conservation Psychology)
+The aesthetic is **bright, airy, and deeply organic**, relying on expansive whitespace, crisp imagery, and staggered rounded masonry cards to create a premium, trustworthy interface. The palette is rooted in deep forest greens and ocean blues — directly reflecting kelp canopies and clean water.
 
-Our palette balances trust and authority with natural growth and clarity:
+## 2. Official Color Palette (From Brand Kit)
 
 ### Primary Colors
-- **Deep Navy (`#0A192F`)**: Replaces dark green as the core structural/text color. Symbolizes the deep ocean, creating a profound sense of trust, scientific authority, and stability.
-- **Emerald (`#059669`)**: Replaces standard green. A vibrant, lush kelp green symbolizing organic growth, environmental action, and life.
-- **Sky Blue (`#0EA5E9`)**: A highly energetic, clear ocean blue used for accents, links, and highlights, representing clarity and calm waters.
+- **Deep Forest (`#012604`)**: The darkest anchor color. Used sparingly for maximum-contrast text, footer backgrounds, and hero overlays. Represents the deep ocean floor and dense kelp canopy.
+- **Kelp Green (`#125A1A`)**: The signature brand green. Used for primary actions, accent badges, icon backgrounds, and section labels. Symbolizes organic growth and environmental action.
+- **Royal Blue (`#003273`)**: A deep, authoritative blue for secondary text emphasis, data visualization, and structural accents. Represents the deep ocean.
+- **Sky Blue (`#5AABD9`)**: The primary interactive accent color. Used for buttons, links, highlights, hover states, and CTA elements. Represents clear water and calm skies.
+- **Midnight Navy (`#00003E`)**: A near-black deep navy for the footer and dark sections. Creates visual closure and grounding.
 
-### Neutral / Background Colors
-- **Alabaster / Sea Salt (`#FAF9F6`)**: The primary global background color. A very soft, organic off-white that prevents harsh contrast and allows the vibrant blues/greens and card shadows to pop naturally.
-- **Crisp White (`#FFFFFF`)**: Used for the structural "cards" to separate content from the Alabaster background.
-- **The Abyss (`#020617`)**: A near-black midnight tone utilized exclusively for the Footer to create immediate visual closure.
+### Extended UI Palette (Derived from brand colors)
+- **Alabaster (`#FAF9F6`)**: Global background. Soft organic off-white.
+- **White (`#FFFFFF`)**: Card surfaces.
+- **Light Green (`#E8F5E9`)**: Subtle green tint for icon backgrounds and badges.
+- **Light Blue (`#E3F2FD`)**: Subtle blue tint for icon backgrounds and badges.
+- **Slate (`#4A5568`)**: Body text on light backgrounds.
+- **Border (`#E2E8F0`)**: Subtle border color for form fields and dividers.
 
 ---
 
-## Typography
+## 3. Typography
 
 - **Primary Font (Headings):** TeX Gyre Adventor Bold
-  - *Web Alternative:* Inter or Montserrat (Bold/Extrabold)
+  - *Web Alternative:* Inter (Bold / Extrabold)
 - **Secondary Font (Body):** Flatory Sans SemiCondensed
-  - *Web Alternative:* Inter or Roboto (Regular/Medium)
+  - *Web Alternative:* Inter (Regular / Medium)
 
 ---
 
-## Visual Style for Investors & Partners
+## 4. Visual Style
 
 - **Aesthetic:** Premium, scientific, investor-focused, dynamic, and trustworthy.
-- **Styling:** Use clean glassmorphism for dark sections, robust white cards for data, high-contrast typography, and smooth micro-animations. Elevate the visual quality to impress stakeholders and government partners.
+- **Cards:** Clean glassmorphism on light backgrounds (frosted white glass). Solid dark cards for contrast blocks.
+- **Spacing:** Generous, consistent section padding. Uniform rhythm across all pages.
+- **Interactions:** Smooth hover lifts on cards (translateY), button scale effects, icon micro-animations.
+- **Border Radius:** Large rounded corners (1.5rem–2.5rem) for a modern, friendly feel.
+- **Imagery:** Cinematic ocean/kelp photography with gradient overlays for text readability.
